@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P&S Infra | Final Site Check</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#102f2a;color:#fff;font-family:Arial,sans-serif}
+.top{padding:22px 28px;background:#0b211e;position:sticky;top:0;z-index:10}
+h1{margin:0 0 6px;font-size:26px}
+p{margin:0;color:#bfcac7;font-size:13px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;padding:16px 28px;background:#fff}
+button{border:1px solid #c99d4c;background:#fff;color:#123d36;padding:11px 16px;font-weight:700;cursor:pointer}
+button.active{background:#c99d4c;color:#123d36}
+.viewer{padding:0 18px 24px}
+iframe{display:block;width:100%;height:calc(100vh - 150px);min-height:650px;border:0;background:#fff}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>P&amp;S Infra — Final Website Check</h1>
+  <p>Check every live website page before deployment.</p>
+</div>
+
+<div class="tabs">
+  <button data-page="/">Home</button>
+  <button data-page="/pages/manpower-solutions.html">Manpower Solutions</button>
+  <button data-page="/pages/civil-construction.html">Civil Construction</button>
+  <button data-page="/pages/gallery.html">Gallery</button>
+  <button data-page="/pages/about-us.html">About Us</button>
+  <button data-page="/pages/careers.html">Careers</button>
+  <button data-page="/pages/contact.html">Contact</button>
+</div>
+
+<div class="viewer">
+  <iframe id="viewer" src="/"></iframe>
+</div>
+
+<script>
+const buttons=document.querySelectorAll("button");
+const viewer=document.getElementById("viewer");
+
+buttons.forEach(function(button){
+  button.addEventListener("click",function(){
+    buttons.forEach(function(b){b.classList.remove("active");});
+    button.classList.add("active");
+    viewer.src=button.dataset.page;
+  });
+});
+
+buttons[0].classList.add("active");
+</script>
+
+</body>
+</html>

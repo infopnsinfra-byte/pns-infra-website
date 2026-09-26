@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123D36">
+<meta name="description" content="P&S Infra provides skilled and unskilled manpower supply, workforce deployment and project support for construction, infrastructure and industrial projects.">
+<title>P&S Infra | Manpower Supply & Workforce Solutions</title>
+<link rel="icon" href="../assets/pns-infra-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="../assets/pns-infra-logo.png" alt="P&S Infra - From Vision to Reality"></a>
+    <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="navlinks">
+      <a class="active" href="/">Home</a>
+      <a href="/pages/manpower-solutions.html">Manpower Solutions</a>
+      <a href="/pages/civil-construction.html" href="/pages/civil-construction.html">Civil Construction</a>
+      <div class="nav-gallery">
+  <button class="nav-gallery-toggle" type="button">
+    Gallery <span>▾</span>
+  </button>
+  <div class="nav-gallery-menu">
+    <a href="/pages/gallery.html">Project Gallery</a>
+    <a href="/pages/gallery.html">Workforce Gallery</a>
+    <a href="/pages/gallery.html">Safety &amp; Site Practices</a>
+    <a href="/pages/gallery.html">Video Gallery</a>
+  </div>
+</div>
+      <a href="/pages/about-us.html">About Us</a>
+
+<a href="/pages/careers.html">Careers</a>
+<a href="/pages/manpower-solutions.html">Contact</a>
+
+<button class="announcement-trigger" type="button" aria-label="Latest announcement">
+  <span class="announcement-bell" aria-hidden="true">
+    <svg viewBox="0 0 24 24" role="img">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+      <path d="M10 21h4"></path>
+    </svg>
+  </span>
+</button>
+      <a class="quote" href="/pages/manpower-solutions.html">Get a Quote <span>→</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="pns-photo-gallery" id="gallery">
+
+  <div class="pns-photo-gallery-header">
+    <div>
+      <span class="pns-gallery-label">PROJECT GALLERY</span>
+      <h1>OUR WORK.<br><span>OUR PROJECTS.</span></h1>
+    </div>
+
+    <p>
+      A visual collection of project environments, workforce deployment
+      and infrastructure execution.
+    </p>
+  </div>
+
+  <div class="pns-photo-grid">
+
+    <button class="pns-photo-item pns-photo-large" type="button"
+      data-image="../assets/hero-power-project.png"
+      data-title="Power & Industrial Projects"
+      aria-label="View Power and Industrial Projects">
+
+      <img src="../assets/hero-power-project.png"
+        alt="Power and industrial project">
+
+      <span class="pns-photo-overlay">
+        <span>01</span>
+        <strong>Power &amp; Industrial Projects</strong>
+      </span>
+    </button>
+
+    <button class="pns-photo-item" type="button"
+      data-image="../assets/hero-project-execution.png"
+      data-title="Project Execution"
+      aria-label="View Project Execution">
+
+      <img src="../assets/hero-project-execution.png"
+        alt="Project execution site">
+
+      <span class="pns-photo-overlay">
+        <span>02</span>
+        <strong>Project Execution</strong>
+      </span>
+    </button>
+
+    <button class="pns-photo-item" type="button"
+      data-image="../assets/hero-power-energy.png"
+      data-title="Industrial Infrastructure"
+      aria-label="View Industrial Infrastructure">
+
+      <img src="../assets/hero-power-energy.png"
+        alt="Industrial infrastructure project">
+
+      <span class="pns-photo-overlay">
+        <span>03</span>
+        <strong>Industrial Infrastructure</strong>
+      </span>
+    </button>
+
+    <button class="pns-photo-item" type="button"
+      data-image="../assets/hero-safety-power-plant.png"
+      data-title="Safety & Site Practices"
+      aria-label="View Safety and Site Practices">
+
+      <img src="../assets/hero-safety-power-plant.png"
+        alt="Safety focused power plant project">
+
+      <span class="pns-photo-overlay">
+        <span>04</span>
+        <strong>Safety &amp; Site Practices</strong>
+      </span>
+    </button>
+
+    <button class="pns-photo-item pns-photo-wide" type="button"
+      data-image="../assets/hero-workforce-construction.png"
+      data-title="Workforce Deployment"
+      aria-label="View Workforce Deployment">
+
+      <img src="../assets/hero-workforce-construction.png"
+        alt="Construction workforce deployment">
+
+      <span class="pns-photo-overlay">
+        <span>05</span>
+        <strong>Workforce Deployment</strong>
+      </span>
+    </button>
+
+  </div>
+
+</section>
+
+<div class="pns-photo-lightbox" id="pnsPhotoLightbox" aria-hidden="true">
+
+  <button
+    class="pns-photo-lightbox-close"
+    id="pnsPhotoLightboxClose"
+    type="button"
+    aria-label="Close image viewer">×</button>
+
+  <button
+    class="pns-photo-lightbox-prev"
+    id="pnsPhotoLightboxPrev"
+    type="button"
+    aria-label="Previous image">←</button>
+
+  <div class="pns-photo-lightbox-content">
+    <img id="pnsPhotoLightboxImage" src="" alt="">
+    <div class="pns-photo-lightbox-caption">
+      <span id="pnsPhotoLightboxCounter">01 / 05</span>
+      <strong id="pnsPhotoLightboxTitle"></strong>
+    </div>
+  </div>
+
+  <button
+    class="pns-photo-lightbox-next"
+    id="pnsPhotoLightboxNext"
+    type="button"
+    aria-label="Next image">→</button>
+
+</div>
+
+<div class="pns-gallery-lightbox" id="pnsGalleryLightbox" aria-hidden="true">
+
+  <button
+    class="pns-gallery-lightbox-close"
+    id="pnsGalleryClose"
+    type="button"
+    aria-label="Close image viewer">
+    ×
+  </button>
+
+  <img
+    id="pnsGalleryLightboxImage"
+    src=""
+    alt=""
+  >
+
+</div>
+</main>
+</main>
+
+<footer class="footer footer-v2">
+  <div class="wrap footer-v2-grid">
+
+    <div class="footer-v2-brand">
+      <img src="../assets/pns-infra-footer-logo.png" alt="P&amp;S Infra" class="footer-logo">
+
+      <p class="footer-v2-description">
+        Reliable manpower supply and civil construction support for project execution.
+      </p>
+
+      
+    </div>
+
+    <div class="footer-v2-column">
+      <h4>Company</h4>
+      <span class="footer-v2-line"></span>
+      <a href="/pages/about-us.html">About Us <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Manpower Supply <b>→</b></a>
+      <a href="#projects">Projects <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Contact <b>→</b></a>
+    </div>
+
+    <div class="footer-v2-column">
+      <h4>Services</h4>
+      <span class="footer-v2-line"></span>
+      <a href="/pages/manpower-solutions.html">Skilled Manpower <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Unskilled Manpower <b>→</b></a>
+      <a href="/pages/civil-construction.html">Civil Construction <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Project Support <b>→</b></a>
+    </div>
+
+    <div class="footer-v2-column footer-v2-contact">
+      <h4>Contact</h4>
+      <span class="footer-v2-line"></span>
+
+      <a href="tel:+919815877931" class="footer-v2-contact-row">
+        <span class="footer-v2-contact-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 3.5 9 3l2 4.7-1.8 1.7a14.5 14.5 0 0 0 5.4 5.4l1.7-1.8 4.7 2-.5 2.4a2 2 0 0 1-2 1.6C10.5 19 5 13.5 4.4 5.5a2 2 0 0 1 2.2-2Z"></path>
+          </svg>
+        </span>
+        <span>98 15 877 931<br>78 70 560 445</span>
+      </a>
+
+      <a href="mailto:info.pnsinfra@gmail.com" class="footer-v2-contact-row">
+        <span class="footer-v2-contact-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+        </span>
+        <span>info.pnsinfra@gmail.com</span>
+      </a>
+
+      <div class="footer-v2-contact-row footer-v2-gst">
+        <span class="footer-v2-contact-icon footer-gst-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="3" y="7" width="26" height="18" rx="3"></rect>
+            <text x="16" y="19" text-anchor="middle">GST</text>
+          </svg>
+        </span>
+        <span>GST: 10ABKFP2329N1Z5</span>
+      </div>
+
+      <div class="footer-v2-social">
+        <h4>Connect With Us</h4>
+        <span class="footer-v2-line"></span>
+
+        <div class="footer-v2-socials">
+
+          <a href="/pages/manpower-solutions.html" aria-label="Instagram" class="footer-v2-social-link instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.7" r="1"></circle>
+            </svg>
+          </a>
+
+          <a href="/pages/manpower-solutions.html" aria-label="X / Twitter" class="footer-v2-social-link x">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h4.2l3.1 4.5L16.1 4H19l-5.3 6.1L19.5 20h-4.2l-3.6-5-4.3 5H4.5l5.6-6.5L5 4Zm3 1.7 8.1 12.6h1.1L9.1 5.7H8Z"></path>
+            </svg>
+          </a>
+
+          <a href="/pages/manpower-solutions.html" aria-label="YouTube" class="footer-v2-social-link youtube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2C2.5 9 2.5 12 2.5 12s0 3 .5 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8Z"></path>
+              <path class="footer-v2-play" d="m10 9 5 3-5 3V9Z"></path>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/919815877931" aria-label="WhatsApp" class="footer-v2-social-link whatsapp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path>
+              <path d="M9 8.5c.3-.3.7-.2.9.2l.8 1.5c.2.3.1.6-.1.8l-.6.5c.7 1.2 1.6 2.1 2.8 2.8l.5-.6c.2-.2.5-.3.8-.1l1.5.8c.4.2.5.6.2.9l-.5.6c-.4.5-1 .7-1.6.5-3.1-1-5.5-3.4-6.5-6.5-.2-.6 0-1.2.5-1.6L9 8.5Z"></path>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrap footer-v2-bottom">
+    <span>© 2026 P&amp;S Infra</span>
+    <span>Manpower Supply&nbsp;&nbsp;·&nbsp;&nbsp;Workforce Solutions&nbsp;&nbsp;·&nbsp;&nbsp;Civil Construction</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const items = Array.from(document.querySelectorAll(".pns-photo-item"));
+  const lightbox = document.getElementById("pnsPhotoLightbox");
+  const lightboxImage = document.getElementById("pnsPhotoLightboxImage");
+  const lightboxTitle = document.getElementById("pnsPhotoLightboxTitle");
+  const lightboxCounter = document.getElementById("pnsPhotoLightboxCounter");
+  const closeButton = document.getElementById("pnsPhotoLightboxClose");
+  const prevButton = document.getElementById("pnsPhotoLightboxPrev");
+  const nextButton = document.getElementById("pnsPhotoLightboxNext");
+
+  if(!items.length || !lightbox) return;
+
+  let currentIndex = 0;
+
+  function showImage(index){
+
+    currentIndex = (index + items.length) % items.length;
+
+    const item = items[currentIndex];
+
+    lightboxImage.src = item.dataset.image;
+    lightboxImage.alt = item.dataset.title || "";
+    lightboxTitle.textContent = item.dataset.title || "";
+    lightboxCounter.textContent =
+      String(currentIndex + 1).padStart(2,"0") +
+      " / " +
+      String(items.length).padStart(2,"0");
+  }
+
+  function openLightbox(index){
+
+    showImage(index);
+
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden","false");
+
+    document.body.style.overflow="hidden";
+  }
+
+  function closeLightbox(){
+
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow="";
+  }
+
+  items.forEach(function(item,index){
+
+    item.addEventListener("click",function(){
+      openLightbox(index);
+    });
+
+  });
+
+  prevButton?.addEventListener("click",function(event){
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+  nextButton?.addEventListener("click",function(event){
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+  closeButton?.addEventListener("click",function(){
+    closeLightbox();
+  });
+
+  lightbox.addEventListener("click",function(event){
+
+    if(event.target === lightbox){
+      closeLightbox();
+    }
+
+  });
+
+  document.addEventListener("keydown",function(event){
+
+    if(!lightbox.classList.contains("is-open")) return;
+
+    if(event.key === "Escape"){
+      closeLightbox();
+    }
+
+    if(event.key === "ArrowLeft"){
+      showImage(currentIndex - 1);
+    }
+
+    if(event.key === "ArrowRight"){
+      showImage(currentIndex + 1);
+    }
+
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const image = document.getElementById("pnsGalleryImage");
+  const title = document.getElementById("pnsGalleryTitle");
+  const description = document.getElementById("pnsGalleryDescription");
+  const current = document.getElementById("pnsGalleryCurrent");
+  const total = document.getElementById("pnsGalleryTotal");
+
+  const prev = document.getElementById("pnsGalleryPrev");
+  const next = document.getElementById("pnsGalleryNext");
+  const zoom = document.getElementById("pnsGalleryZoom");
+
+  const lightbox = document.getElementById("pnsGalleryLightbox");
+  const lightboxImage = document.getElementById("pnsGalleryLightboxImage");
+  const close = document.getElementById("pnsGalleryClose");
+
+  if(!image || !lightbox || !zoom){
+    console.warn("P&S Gallery elements not found.");
+    return;
+  }
+
+  const slides = [
+    {
+      image: "../assets/hero-power-project.png",
+      title: "Power & Industrial Projects",
+      description: "Project environments, industrial infrastructure and execution-focused work.",
+      alt: "Power and industrial project"
+    },
+    {
+      image: "../assets/hero-project-execution.png",
+      title: "Project Execution",
+      description: "Site execution environments supporting construction and project requirements.",
+      alt: "Project execution site"
+    },
+    {
+      image: "../assets/hero-power-energy.png",
+      title: "Industrial Infrastructure",
+      description: "Industrial and power-sector environments representing project execution support.",
+      alt: "Industrial infrastructure project"
+    }
+  ];
+
+  let index = 0;
+
+  total.textContent = String(slides.length).padStart(2,"0");
+
+  function showSlide(i){
+
+    index = (i + slides.length) % slides.length;
+
+    const slide = slides[index];
+
+    image.style.opacity = "0";
+
+    setTimeout(function(){
+
+      image.src = slide.image;
+      image.alt = slide.alt;
+
+      title.textContent = slide.title;
+      description.textContent = slide.description;
+
+      current.textContent = String(index + 1).padStart(2,"0");
+
+      image.style.opacity = "1";
+
+    },180);
+  }
+
+  prev.addEventListener("click", function(){
+    showSlide(index - 1);
+  });
+
+  next.addEventListener("click", function(){
+    showSlide(index + 1);
+  });
+
+  function openViewer(){
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden","false");
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeViewer(){
+
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow = "";
+  }
+
+  zoom.addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    openViewer();
+  });
+
+  image.addEventListener("click", function(){
+    openViewer();
+  });
+
+  close.addEventListener("click", function(){
+    closeViewer();
+  });
+
+  lightbox.addEventListener("click", function(event){
+
+    if(event.target === lightbox){
+      closeViewer();
+    }
+
+  });
+
+  document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+      closeViewer();
+    }
+
+    if(event.key === "ArrowLeft"){
+      showSlide(index - 1);
+    }
+
+    if(event.key === "ArrowRight"){
+      showSlide(index + 1);
+    }
+
+  });
+
+});
+</script>
+</body>
+</html>

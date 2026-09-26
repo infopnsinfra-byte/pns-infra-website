@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123D36">
+<meta name="description" content="P&S Infra provides skilled and unskilled manpower supply, workforce deployment and project support for construction, infrastructure and industrial projects.">
+<title>P&S Infra | Manpower Supply & Workforce Solutions</title>
+<link rel="icon" href="../assets/pns-infra-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+.pns-subgallery{
+  background:#102f2a;
+  color:#fff;
+  padding:70px 0 90px;
+  min-height:calc(100vh - 90px);
+}
+.pns-subgallery .pns-photo-gallery-header{
+  width:min(1380px,92vw);
+  margin:0 auto 24px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:50px;
+}
+.pns-subgallery .pns-photo-gallery-header h1{
+  margin:5px 0 0;
+  color:#fff;
+  font-size:clamp(38px,5vw,68px);
+  line-height:.95;
+  letter-spacing:-.035em;
+  font-weight:800;
+}
+.pns-subgallery .pns-photo-gallery-header h1 span{
+  color:#b99a5b;
+}
+.pns-subgallery .pns-photo-gallery-header p{
+  flex:0 0 360px;
+  max-width:360px;
+  margin:0;
+  color:rgba(255,255,255,.62);
+  font-size:12.5px;
+  line-height:1.6;
+}
+.pns-subgallery-grid{
+  width:min(1380px,92vw);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+.pns-subgallery-item{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+  padding:0;
+  border:0;
+  background:#0b211e;
+  cursor:pointer;
+  text-align:left;
+}
+.pns-subgallery-item img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.pns-subgallery-item:hover img{
+  transform:scale(1.035);
+}
+.pns-subgallery-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:70px 18px 18px;
+  background:linear-gradient(to top,rgba(5,20,17,.92),rgba(5,20,17,.25),transparent);
+  color:#fff;
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .28s ease,transform .28s ease;
+}
+.pns-subgallery-item:hover .pns-subgallery-overlay{
+  opacity:1;
+  transform:translateY(0);
+}
+.pns-subgallery-overlay strong{
+  font-size:14px;
+  font-weight:600;
+}
+.pns-subgallery-overlay small{
+  color:rgba(255,255,255,.68);
+  font-size:11px;
+  line-height:1.4;
+}
+.pns-subgallery-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  padding:30px;
+  background:rgba(4,16,14,.96);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .25s ease,visibility .25s ease;
+}
+.pns-subgallery-lightbox.is-open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.pns-subgallery-view{
+  position:relative;
+  max-width:min(88vw,1500px);
+  max-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.pns-subgallery-view img{
+  display:block;
+  max-width:88vw;
+  max-height:84vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  box-shadow:0 20px 80px rgba(0,0,0,.4);
+}
+.pns-subgallery-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:70px 22px 18px;
+  color:#fff;
+  background:linear-gradient(to top,rgba(0,0,0,.82),transparent);
+}
+.pns-subgallery-caption span{
+  display:block;
+  margin-bottom:5px;
+  color:#b99a5b;
+  font-size:11px;
+  letter-spacing:.12em;
+}
+.pns-subgallery-caption strong{
+  font-size:15px;
+  font-weight:600;
+}
+.pns-subgallery-close,
+.pns-subgallery-prev,
+.pns-subgallery-next{
+  position:absolute;
+  z-index:2;
+  width:48px;
+  height:48px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  cursor:pointer;
+  font-size:22px;
+}
+.pns-subgallery-close{
+  top:24px;
+  right:28px;
+  font-size:30px;
+}
+.pns-subgallery-prev{
+  left:28px;
+}
+.pns-subgallery-next{
+  right:28px;
+}
+.pns-subgallery-close:hover,
+.pns-subgallery-prev:hover,
+.pns-subgallery-next:hover{
+  background:#b99a5b;
+  color:#102f2a;
+}
+@media(max-width:768px){
+  .pns-subgallery{
+    padding:50px 0 60px;
+  }
+  .pns-subgallery .pns-photo-gallery-header{
+    display:block;
+    width:92vw;
+    margin-bottom:20px;
+  }
+  .pns-subgallery .pns-photo-gallery-header h1{
+    font-size:clamp(38px,12vw,58px);
+  }
+  .pns-subgallery .pns-photo-gallery-header p{
+    max-width:100%;
+    margin-top:18px;
+  }
+  .pns-subgallery-grid{
+    width:92vw;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+  }
+  .pns-subgallery-overlay{
+    opacity:1;
+    transform:none;
+    padding:55px 10px 10px;
+  }
+  .pns-subgallery-overlay strong{
+    font-size:10px;
+  }
+  .pns-subgallery-overlay small{
+    font-size:9px;
+  }
+  .pns-subgallery-lightbox{
+    padding:15px;
+  }
+  .pns-subgallery-view{
+    max-width:94vw;
+    max-height:88vh;
+  }
+  .pns-subgallery-view img{
+    max-width:94vw;
+    max-height:82vh;
+  }
+  .pns-subgallery-prev,
+  .pns-subgallery-next{
+    width:40px;
+    height:40px;
+    font-size:18px;
+  }
+  .pns-subgallery-prev{left:10px;}
+  .pns-subgallery-next{right:10px;}
+}
+</style></head>
+<body>
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="../assets/pns-infra-logo.png" alt="P&S Infra - From Vision to Reality"></a>
+    <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="navlinks">
+      <a class="active" href="/">Home</a>
+      <a href="/pages/manpower-solutions.html">Manpower Solutions</a>
+      <a href="/pages/civil-construction.html" href="/pages/civil-construction.html">Civil Construction</a>
+      <div class="nav-gallery">
+  <button class="nav-gallery-toggle" type="button">
+    Gallery <span>▾</span>
+  </button>
+  <div class="nav-gallery-menu">
+    <a href="/pages/gallery.html">Project Gallery</a>
+    <a href="/pages/gallery.html">Workforce Gallery</a>
+    <a href="/pages/gallery.html">Safety &amp; Site Practices</a>
+    <a href="/pages/gallery.html">Video Gallery</a>
+  </div>
+</div>
+      <a href="/pages/about-us.html">About Us</a>
+
+<a href="/pages/careers.html">Careers</a>
+<a href="/pages/manpower-solutions.html">Contact</a>
+
+<button class="announcement-trigger" type="button" aria-label="Latest announcement">
+  <span class="announcement-bell" aria-hidden="true">
+    <svg viewBox="0 0 24 24" role="img">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+      <path d="M10 21h4"></path>
+    </svg>
+  </span>
+</button>
+      <a class="quote" href="/pages/manpower-solutions.html">Get a Quote <span>→</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="pns-photo-gallery pns-subgallery" id="subgallery">
+  <div class="pns-photo-gallery-header">
+    <div>
+      <span class="pns-gallery-label">WORKFORCE GALLERY</span>
+      <h1>PEOPLE.<br><span>AT WORK.</span></h1>
+    </div>
+    <p>A visual collection of workforce deployment, project support and people working across demanding site environments.</p>
+  </div>
+
+  <div class="pns-subgallery-grid">
+
+      <button class="pns-subgallery-item" type="button" data-image="../assets/hero-workforce-construction.png" data-title="Skilled Workforce" aria-label="View Skilled Workforce">
+        <img src="../assets/hero-workforce-construction.png" alt="Skilled Workforce">
+        <span class="pns-subgallery-overlay">
+          <strong>Skilled Workforce</strong>
+          <small>Experienced workforce for project execution</small>
+        </span>
+      </button>
+      <button class="pns-subgallery-item" type="button" data-image="../assets/hero-project-execution.png" data-title="Project Deployment" aria-label="View Project Deployment">
+        <img src="../assets/hero-project-execution.png" alt="Project Deployment">
+        <span class="pns-subgallery-overlay">
+          <strong>Project Deployment</strong>
+          <small>People mobilised according to project requirements</small>
+        </span>
+      </button>
+      <button class="pns-subgallery-item" type="button" data-image="../assets/hero-power-project.png" data-title="Industrial Workforce" aria-label="View Industrial Workforce">
+        <img src="../assets/hero-power-project.png" alt="Industrial Workforce">
+        <span class="pns-subgallery-overlay">
+          <strong>Industrial Workforce</strong>
+          <small>Workforce support for industrial projects</small>
+        </span>
+      </button>
+      <button class="pns-subgallery-item" type="button" data-image="../assets/hero-power-energy.png" data-title="Site Support" aria-label="View Site Support">
+        <img src="../assets/hero-power-energy.png" alt="Site Support">
+        <span class="pns-subgallery-overlay">
+          <strong>Site Support</strong>
+          <small>Reliable workforce for demanding site environments</small>
+        </span>
+      </button>
+      <button class="pns-subgallery-item" type="button" data-image="../assets/hero-safety-power-plant.png" data-title="Safety-focused Workforce" aria-label="View Safety-focused Workforce">
+        <img src="../assets/hero-safety-power-plant.png" alt="Safety-focused Workforce">
+        <span class="pns-subgallery-overlay">
+          <strong>Safety-focused Workforce</strong>
+          <small>People working with safety and site discipline in mind</small>
+        </span>
+      </button>
+  </div>
+</section>
+
+<div class="pns-subgallery-lightbox" id="pnsSubGalleryLightbox" aria-hidden="true">
+  <button class="pns-subgallery-close" type="button" aria-label="Close image viewer">×</button>
+  <button class="pns-subgallery-prev" type="button" aria-label="Previous image">←</button>
+
+  <div class="pns-subgallery-view">
+    <img id="pnsSubGalleryImage" src="" alt="">
+    <div class="pns-subgallery-caption">
+      <span id="pnsSubGalleryCounter">01 / 05</span>
+      <strong id="pnsSubGalleryTitle"></strong>
+    </div>
+  </div>
+
+  <button class="pns-subgallery-next" type="button" aria-label="Next image">→</button>
+</div>
+</main>
+<footer class="footer footer-v2">
+  <div class="wrap footer-v2-grid">
+
+    <div class="footer-v2-brand">
+      <img src="../assets/pns-infra-footer-logo.png" alt="P&amp;S Infra" class="footer-logo">
+
+      <p class="footer-v2-description">
+        Reliable manpower supply and civil construction support for project execution.
+      </p>
+
+      
+    </div>
+
+    <div class="footer-v2-column">
+      <h4>Company</h4>
+      <span class="footer-v2-line"></span>
+      <a href="/pages/about-us.html">About Us <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Manpower Supply <b>→</b></a>
+      <a href="#projects">Projects <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Contact <b>→</b></a>
+    </div>
+
+    <div class="footer-v2-column">
+      <h4>Services</h4>
+      <span class="footer-v2-line"></span>
+      <a href="/pages/manpower-solutions.html">Skilled Manpower <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Unskilled Manpower <b>→</b></a>
+      <a href="/pages/civil-construction.html">Civil Construction <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Project Support <b>→</b></a>
+    </div>
+
+    <div class="footer-v2-column footer-v2-contact">
+      <h4>Contact</h4>
+      <span class="footer-v2-line"></span>
+
+      <a href="tel:+919815877931" class="footer-v2-contact-row">
+        <span class="footer-v2-contact-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 3.5 9 3l2 4.7-1.8 1.7a14.5 14.5 0 0 0 5.4 5.4l1.7-1.8 4.7 2-.5 2.4a2 2 0 0 1-2 1.6C10.5 19 5 13.5 4.4 5.5a2 2 0 0 1 2.2-2Z"></path>
+          </svg>
+        </span>
+        <span>98 15 877 931<br>78 70 560 445</span>
+      </a>
+
+      <a href="mailto:info.pnsinfra@gmail.com" class="footer-v2-contact-row">
+        <span class="footer-v2-contact-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+        </span>
+        <span>info.pnsinfra@gmail.com</span>
+      </a>
+
+      <div class="footer-v2-contact-row footer-v2-gst">
+        <span class="footer-v2-contact-icon footer-gst-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <rect x="3" y="7" width="26" height="18" rx="3"></rect>
+            <text x="16" y="19" text-anchor="middle">GST</text>
+          </svg>
+        </span>
+        <span>GST: 10ABKFP2329N1Z5</span>
+      </div>
+
+      <div class="footer-v2-social">
+        <h4>Connect With Us</h4>
+        <span class="footer-v2-line"></span>
+
+        <div class="footer-v2-socials">
+
+          <a href="/pages/manpower-solutions.html" aria-label="Instagram" class="footer-v2-social-link instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.5" cy="6.7" r="1"></circle>
+            </svg>
+          </a>
+
+          <a href="/pages/manpower-solutions.html" aria-label="X / Twitter" class="footer-v2-social-link x">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 4h4.2l3.1 4.5L16.1 4H19l-5.3 6.1L19.5 20h-4.2l-3.6-5-4.3 5H4.5l5.6-6.5L5 4Zm3 1.7 8.1 12.6h1.1L9.1 5.7H8Z"></path>
+            </svg>
+          </a>
+
+          <a href="/pages/manpower-solutions.html" aria-label="YouTube" class="footer-v2-social-link youtube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.2 4.7 12 4.7 12 4.7s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2C2.5 9 2.5 12 2.5 12s0 3 .5 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8Z"></path>
+              <path class="footer-v2-play" d="m10 9 5 3-5 3V9Z"></path>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/919815877931" aria-label="WhatsApp" class="footer-v2-social-link whatsapp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"></path>
+              <path d="M9 8.5c.3-.3.7-.2.9.2l.8 1.5c.2.3.1.6-.1.8l-.6.5c.7 1.2 1.6 2.1 2.8 2.8l.5-.6c.2-.2.5-.3.8-.1l1.5.8c.4.2.5.6.2.9l-.5.6c-.4.5-1 .7-1.6.5-3.1-1-5.5-3.4-6.5-6.5-.2-.6 0-1.2.5-1.6L9 8.5Z"></path>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrap footer-v2-bottom">
+    <span>© 2026 P&amp;S Infra</span>
+    <span>Manpower Supply&nbsp;&nbsp;·&nbsp;&nbsp;Workforce Solutions&nbsp;&nbsp;·&nbsp;&nbsp;Civil Construction</span>
+  </div>
+</footer>
+<script src="../script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const items = Array.from(document.querySelectorAll(".pns-photo-item"));
+  const lightbox = document.getElementById("pnsPhotoLightbox");
+  const lightboxImage = document.getElementById("pnsPhotoLightboxImage");
+  const lightboxTitle = document.getElementById("pnsPhotoLightboxTitle");
+  const lightboxCounter = document.getElementById("pnsPhotoLightboxCounter");
+  const closeButton = document.getElementById("pnsPhotoLightboxClose");
+  const prevButton = document.getElementById("pnsPhotoLightboxPrev");
+  const nextButton = document.getElementById("pnsPhotoLightboxNext");
+
+  if(!items.length || !lightbox) return;
+
+  let currentIndex = 0;
+
+  function showImage(index){
+
+    currentIndex = (index + items.length) % items.length;
+
+    const item = items[currentIndex];
+
+    lightboxImage.src = item.dataset.image;
+    lightboxImage.alt = item.dataset.title || "";
+    lightboxTitle.textContent = item.dataset.title || "";
+    lightboxCounter.textContent =
+      String(currentIndex + 1).padStart(2,"0") +
+      " / " +
+      String(items.length).padStart(2,"0");
+  }
+
+  function openLightbox(index){
+
+    showImage(index);
+
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden","false");
+
+    document.body.style.overflow="hidden";
+  }
+
+  function closeLightbox(){
+
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow="";
+  }
+
+  items.forEach(function(item,index){
+
+    item.addEventListener("click",function(){
+      openLightbox(index);
+    });
+
+  });
+
+  prevButton?.addEventListener("click",function(event){
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+  nextButton?.addEventListener("click",function(event){
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+  closeButton?.addEventListener("click",function(){
+    closeLightbox();
+  });
+
+  lightbox.addEventListener("click",function(event){
+
+    if(event.target === lightbox){
+      closeLightbox();
+    }
+
+  });
+
+  document.addEventListener("keydown",function(event){
+
+    if(!lightbox.classList.contains("is-open")) return;
+
+    if(event.key === "Escape"){
+      closeLightbox();
+    }
+
+    if(event.key === "ArrowLeft"){
+      showImage(currentIndex - 1);
+    }
+
+    if(event.key === "ArrowRight"){
+      showImage(currentIndex + 1);
+    }
+
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const image = document.getElementById("pnsGalleryImage");
+  const title = document.getElementById("pnsGalleryTitle");
+  const description = document.getElementById("pnsGalleryDescription");
+  const current = document.getElementById("pnsGalleryCurrent");
+  const total = document.getElementById("pnsGalleryTotal");
+
+  const prev = document.getElementById("pnsGalleryPrev");
+  const next = document.getElementById("pnsGalleryNext");
+  const zoom = document.getElementById("pnsGalleryZoom");
+
+  const lightbox = document.getElementById("pnsGalleryLightbox");
+  const lightboxImage = document.getElementById("pnsGalleryLightboxImage");
+  const close = document.getElementById("pnsGalleryClose");
+
+  if(!image || !lightbox || !zoom){
+    console.warn("P&S Gallery elements not found.");
+    return;
+  }
+
+  const slides = [
+    {
+      image: "../assets/hero-power-project.png",
+      title: "Power & Industrial Projects",
+      description: "Project environments, industrial infrastructure and execution-focused work.",
+      alt: "Power and industrial project"
+    },
+    {
+      image: "../assets/hero-project-execution.png",
+      title: "Project Execution",
+      description: "Site execution environments supporting construction and project requirements.",
+      alt: "Project execution site"
+    },
+    {
+      image: "../assets/hero-power-energy.png",
+      title: "Industrial Infrastructure",
+      description: "Industrial and power-sector environments representing project execution support.",
+      alt: "Industrial infrastructure project"
+    }
+  ];
+
+  let index = 0;
+
+  total.textContent = String(slides.length).padStart(2,"0");
+
+  function showSlide(i){
+
+    index = (i + slides.length) % slides.length;
+
+    const slide = slides[index];
+
+    image.style.opacity = "0";
+
+    setTimeout(function(){
+
+      image.src = slide.image;
+      image.alt = slide.alt;
+
+      title.textContent = slide.title;
+      description.textContent = slide.description;
+
+      current.textContent = String(index + 1).padStart(2,"0");
+
+      image.style.opacity = "1";
+
+    },180);
+  }
+
+  prev.addEventListener("click", function(){
+    showSlide(index - 1);
+  });
+
+  next.addEventListener("click", function(){
+    showSlide(index + 1);
+  });
+
+  function openViewer(){
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden","false");
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeViewer(){
+
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden","true");
+
+    document.body.style.overflow = "";
+  }
+
+  zoom.addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    openViewer();
+  });
+
+  image.addEventListener("click", function(){
+    openViewer();
+  });
+
+  close.addEventListener("click", function(){
+    closeViewer();
+  });
+
+  lightbox.addEventListener("click", function(event){
+
+    if(event.target === lightbox){
+      closeViewer();
+    }
+
+  });
+
+  document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+      closeViewer();
+    }
+
+    if(event.key === "ArrowLeft"){
+      showSlide(index - 1);
+    }
+
+    if(event.key === "ArrowRight"){
+      showSlide(index + 1);
+    }
+
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  const items=Array.from(document.querySelectorAll(".pns-subgallery-item"));
+  const box=document.getElementById("pnsSubGalleryLightbox");
+  const image=document.getElementById("pnsSubGalleryImage");
+  const title=document.getElementById("pnsSubGalleryTitle");
+  const counter=document.getElementById("pnsSubGalleryCounter");
+  const close=box?.querySelector(".pns-subgallery-close");
+  const prev=box?.querySelector(".pns-subgallery-prev");
+  const next=box?.querySelector(".pns-subgallery-next");
+
+  if(!items.length||!box)return;
+
+  let index=0;
+
+  function show(i){
+    index=(i+items.length)%items.length;
+    const item=items[index];
+    image.src=item.dataset.image;
+    image.alt=item.dataset.title||"";
+    title.textContent=item.dataset.title||"";
+    counter.textContent=String(index+1).padStart(2,"0")+" / "+String(items.length).padStart(2,"0");
+  }
+
+  function open(i){
+    show(i);
+    box.classList.add("is-open");
+    box.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  }
+
+  function hide(){
+    box.classList.remove("is-open");
+    box.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+  }
+
+  items.forEach(function(item,i){
+    item.addEventListener("click",function(){open(i);});
+  });
+
+  close?.addEventListener("click",hide);
+  prev?.addEventListener("click",function(){show(index-1);});
+  next?.addEventListener("click",function(){show(index+1);});
+
+  box.addEventListener("click",function(e){
+    if(e.target===box)hide();
+  });
+
+  document.addEventListener("keydown",function(e){
+    if(!box.classList.contains("is-open"))return;
+    if(e.key==="Escape")hide();
+    if(e.key==="ArrowLeft")show(index-1);
+    if(e.key==="ArrowRight")show(index+1);
+  });
+});
+</script></body>
+</html>

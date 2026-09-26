@@ -4,3 +4,5 @@
 *.before_*
 
 *.before_*
+
+pages_backup_before_image_update/

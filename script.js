@@ -76,10 +76,142 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(
     setTimeout(openAnnouncement,1200);
   }
 
-  // Mobile gallery accordion
-  galleryToggle?.addEventListener('click',()=>{
+  // Gallery navigation
+  galleryToggle?.addEventListener('click',(event)=>{
     if(window.innerWidth <= 760){
+      event.preventDefault();
       gallery?.classList.toggle('open');
     }
   });
+
+  gallery?.querySelectorAll('.nav-gallery-menu a').forEach(link=>{
+    link.addEventListener('click',()=>{
+      gallery?.classList.remove('open');
+    });
+  });
+})();
+/* =========================================================
+   P&S INFRA — CINEMATIC GALLERY
+   ========================================================= */
+
+(function(){
+
+  const gallery=document.querySelector('.pns-cinematic-gallery');
+  if(!gallery) return;
+
+  const image=document.getElementById('pnsGalleryImage');
+  const title=document.getElementById('pnsGalleryTitle');
+  const description=document.getElementById('pnsGalleryDescription');
+  const current=document.getElementById('pnsGalleryCurrent');
+  const total=document.getElementById('pnsGalleryTotal');
+
+  const prev=document.getElementById('pnsGalleryPrev');
+  const next=document.getElementById('pnsGalleryNext');
+  const zoom=document.getElementById('pnsGalleryZoom');
+
+  const lightbox=document.getElementById('pnsGalleryLightbox');
+  const lightboxImage=document.getElementById('pnsGalleryLightboxImage');
+  const close=document.getElementById('pnsGalleryClose');
+
+  const slides=[
+    {
+      image:'../assets/hero-power-project.png',
+      title:'Power & Industrial Projects',
+      description:'Project environments, industrial infrastructure and execution-focused work.',
+      alt:'Power and industrial project'
+    },
+    {
+      image:'../assets/hero-project-execution.png',
+      title:'Project Execution',
+      description:'Site execution environments supporting construction and project requirements.',
+      alt:'Project execution site'
+    },
+    {
+      image:'../assets/hero-power-energy.png',
+      title:'Industrial Infrastructure',
+      description:'Industrial and power-sector environments representing project execution support.',
+      alt:'Industrial infrastructure project'
+    }
+  ];
+
+  let index=0;
+
+  total.textContent=String(slides.length).padStart(2,'0');
+
+  function showSlide(newIndex){
+
+    index=(newIndex+slides.length)%slides.length;
+
+    const slide=slides[index];
+
+    image.style.opacity='0';
+
+    setTimeout(()=>{
+      image.src=slide.image;
+      image.alt=slide.alt;
+      title.textContent=slide.title;
+      description.textContent=slide.description;
+      current.textContent=String(index+1).padStart(2,'0');
+      image.style.opacity='1';
+    },180);
+  }
+
+  prev?.addEventListener('click',()=>{
+    showSlide(index-1);
+  });
+
+  next?.addEventListener('click',()=>{
+    showSlide(index+1);
+  });
+
+  function openLightbox(){
+
+    lightboxImage.src=image.src;
+    lightboxImage.alt=image.alt;
+
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden','false');
+
+    document.body.style.overflow='hidden';
+  }
+
+  function closeLightbox(){
+
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden','true');
+
+    document.body.style.overflow='';
+  }
+
+  zoom?.addEventListener('click',openLightbox);
+  image?.addEventListener('click',openLightbox);
+  close?.addEventListener('click',closeLightbox);
+
+  lightbox?.addEventListener('click',(event)=>{
+    if(event.target===lightbox){
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown',(event)=>{
+
+    if(event.key==='Escape' && lightbox?.classList.contains('is-open')){
+      closeLightbox();
+      return;
+    }
+
+    if(lightbox?.classList.contains('is-open')) return;
+
+    if(event.key==='ArrowLeft'){
+      showSlide(index-1);
+    }
+
+    if(event.key==='ArrowRight'){
+      showSlide(index+1);
+    }
+
+  });
+
+  image.style.transition='opacity .18s ease';
+
 })();
