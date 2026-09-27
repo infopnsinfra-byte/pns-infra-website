@@ -31,18 +31,75 @@ restart();
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(timer);}
 
 /* =========================================================
-   ANNOUNCEMENT POPUP
+   ANNOUNCEMENT POPUP — GLOBAL
+   Works on every P&S Infra page
    ========================================================= */
 
 (function(){
-  const modal = document.querySelector('#announcementModal');
-  const trigger = document.querySelector('.announcement-trigger');
-  const close = document.querySelector('.announcement-close');
-  const backdrop = document.querySelector('.announcement-backdrop');
-  const gallery = document.querySelector('.nav-gallery');
-  const galleryToggle = document.querySelector('.nav-gallery-toggle');
 
-  if(!modal) return;
+  const trigger = document.querySelector('.announcement-trigger');
+  if(!trigger) return;
+
+  let modal = document.querySelector('#announcementModal');
+
+  /* Create announcement popup automatically on pages
+     where the HTML is not already present */
+  if(!modal){
+
+    modal=document.createElement('div');
+    modal.id='announcementModal';
+    modal.className='announcement-modal';
+    modal.setAttribute('aria-hidden','true');
+
+    modal.innerHTML=`
+      <div class="announcement-backdrop"></div>
+
+      <div class="announcement-card"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="announcementTitle">
+
+        <button class="announcement-close"
+                type="button"
+                aria-label="Close announcement">&times;</button>
+
+        <div class="announcement-label">
+          <span></span>
+          LATEST ANNOUNCEMENT
+        </div>
+
+        <div class="announcement-kicker">
+          P&amp;S INFRA
+        </div>
+
+        <h2 id="announcementTitle">
+          A NEW CHAPTER FOR <span>P&amp;S INFRA.</span>
+        </h2>
+
+        <p class="announcement-text">
+          We have initiated the necessary steps for our upcoming manpower operations at the <strong>Adani Power Plant project at Pirpainti, Bihar</strong>, under the <strong>Tata Group</strong>. Preparations and workforce mobilisation are already underway, and we expect operations to commence shortly.
+        </p>
+
+        <div class="announcement-meta">
+          <span>PROJECT UPDATE</span>
+          <span>•</span>
+          <span>PIRPAINTI, BIHAR</span>
+        </div>
+
+        <a class="announcement-cta"
+           href="/pages/contact.html">
+          Discuss Your Requirement
+          <span>&#8594;</span>
+        </a>
+
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+  }
+
+  const close=modal.querySelector('.announcement-close');
+  const backdrop=modal.querySelector('.announcement-backdrop');
 
   function openAnnouncement(){
     modal.classList.add('open');
@@ -57,28 +114,38 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(
     localStorage.setItem('pns-announcement-seen','1');
   }
 
-  trigger?.addEventListener('click',openAnnouncement);
+  /* Bell button */
+  trigger.addEventListener('click',openAnnouncement);
+
+  /* Close button */
   close?.addEventListener('click',closeAnnouncement);
+
+  /* Click outside popup */
   backdrop?.addEventListener('click',closeAnnouncement);
 
+  /* ESC key */
   document.addEventListener('keydown',(e)=>{
-    if(e.key === 'Escape' && modal.classList.contains('open')){
+    if(e.key==='Escape' && modal.classList.contains('open')){
       closeAnnouncement();
     }
   });
 
-  document.querySelectorAll('.announcement-cta').forEach(link=>{
+  /* CTA closes popup before navigation */
+  modal.querySelectorAll('.announcement-cta').forEach(link=>{
     link.addEventListener('click',closeAnnouncement);
   });
 
-  // Show automatically only once
+  /* Automatic popup — only once */
   if(!localStorage.getItem('pns-announcement-seen')){
     setTimeout(openAnnouncement,1200);
   }
 
-  // Gallery navigation
+  /* Gallery mobile navigation */
+  const gallery=document.querySelector('.nav-gallery');
+  const galleryToggle=document.querySelector('.nav-gallery-toggle');
+
   galleryToggle?.addEventListener('click',(event)=>{
-    if(window.innerWidth <= 760){
+    if(window.innerWidth<=760){
       event.preventDefault();
       gallery?.classList.toggle('open');
     }
@@ -89,6 +156,7 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(
       gallery?.classList.remove('open');
     });
   });
+
 })();
 /* =========================================================
    P&S INFRA — CINEMATIC GALLERY
@@ -213,5 +281,79 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(
   });
 
   image.style.transition='opacity .18s ease';
+
+})();
+
+/* =========================================================
+   P&S INFRA — AUTO ACTIVE NAVIGATION
+   ========================================================= */
+
+(function(){
+
+  const path = window.location.pathname
+    .replace(/\/+$/,'')
+    .toLowerCase();
+
+  const links = document.querySelectorAll('.navlinks > a:not(.quote)');
+  const gallery = document.querySelector('.nav-gallery');
+  const galleryLinks = gallery?.querySelectorAll('.nav-gallery-menu a') || [];
+
+  links.forEach(link=>{
+    link.classList.remove('active');
+  });
+
+  gallery?.classList.remove('active');
+
+  let matched = false;
+
+  links.forEach(link=>{
+    const href = link.getAttribute('href');
+    if(!href) return;
+
+    const cleanHref = href
+      .replace(/\/+$/,'')
+      .toLowerCase();
+
+    if(
+      (path === '' || path === '/') &&
+      (cleanHref === '' || cleanHref === '/')
+    ){
+      link.classList.add('active');
+      matched = true;
+      return;
+    }
+
+    if(
+      cleanHref !== '/' &&
+      path === cleanHref
+    ){
+      link.classList.add('active');
+      matched = true;
+    }
+  });
+
+  galleryLinks.forEach(link=>{
+    const href = link.getAttribute('href');
+    if(!href) return;
+
+    const cleanHref = href
+      .replace(/\/+$/,'')
+      .toLowerCase();
+
+    if(path === cleanHref){
+      gallery?.classList.add('active');
+      matched = true;
+    }
+  });
+
+  /* Any gallery-related page keeps Gallery highlighted */
+  if(
+    path.includes('/pages/gallery.html') ||
+    path.includes('/pages/workforce-gallery.html') ||
+    path.includes('/pages/safety-site-practices.html') ||
+    path.includes('/pages/video-gallery.html')
+  ){
+    gallery?.classList.add('active');
+  }
 
 })();

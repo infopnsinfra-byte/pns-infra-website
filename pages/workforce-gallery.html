@@ -246,37 +246,87 @@
 <body>
 <header class="header">
   <div class="wrap nav">
-    <a class="brand" href="/"><img src="../assets/pns-infra-logo.png" alt="P&S Infra - From Vision to Reality"></a>
-    <button class="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <a class="brand" href="/">
+      <img src="../assets/pns-infra-logo.png" alt="P&S Infra - From Vision to Reality">
+    </a>
+
+    <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+
     <nav class="navlinks">
-      <a class="active" href="/">Home</a>
-      <a href="/pages/manpower-solutions.html">Manpower Solutions</a>
-      <a href="/pages/civil-construction.html" href="/pages/civil-construction.html">Civil Construction</a>
+
+      <a href="/">Home</a>
+
+      <a href="/pages/manpower-solutions.html">
+        Manpower Solutions
+      </a>
+
+      <a href="/pages/civil-construction.html">
+        Civil Construction
+      </a>
+
       <div class="nav-gallery">
-  <button class="nav-gallery-toggle" type="button">
-    Gallery <span>▾</span>
-  </button>
-  <div class="nav-gallery-menu">
-    <a href="/pages/gallery.html">Project Gallery</a>
-    <a href="/pages/gallery.html">Workforce Gallery</a>
-    <a href="/pages/gallery.html">Safety &amp; Site Practices</a>
-    <a href="/pages/gallery.html">Video Gallery</a>
-  </div>
-</div>
-      <a href="/pages/about-us.html">About Us</a>
 
-<a href="/pages/careers.html">Careers</a>
-<a href="/pages/manpower-solutions.html">Contact</a>
+        <button class="nav-gallery-toggle" type="button" aria-expanded="false">
+          <span>Gallery</span>
+          <span class="gallery-chevron">&#9662;</span>
+        </button>
 
-<button class="announcement-trigger" type="button" aria-label="Latest announcement">
-  <span class="announcement-bell" aria-hidden="true">
-    <svg viewBox="0 0 24 24" role="img">
-      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
-      <path d="M10 21h4"></path>
-    </svg>
-  </span>
-</button>
-      <a class="quote" href="/pages/manpower-solutions.html">Get a Quote <span>→</span></a>
+        <div class="nav-gallery-menu">
+          <a href="/pages/gallery.html">
+            <span>Project Gallery</span>
+            <b>&#8594;</b>
+          </a>
+
+          <a href="/pages/workforce-gallery.html">
+            <span>Workforce Gallery</span>
+            <b>&#8594;</b>
+          </a>
+
+          <a href="/pages/safety-site-practices.html">
+            <span>Safety &amp; Site Practices</span>
+            <b>&#8594;</b>
+          </a>
+
+          <a href="/pages/video-gallery.html">
+            <span>Video Gallery</span>
+            <b>&#8594;</b>
+          </a>
+        </div>
+
+      </div>
+
+      <a href="/pages/about-us.html">
+        About Us
+      </a>
+
+      <a href="/pages/careers.html">
+        Careers
+      </a>
+
+      <a href="/pages/contact.html">
+        Contact
+      </a>
+
+      <button
+        class="announcement-trigger"
+        type="button"
+        aria-label="Latest announcement"
+        title="Latest announcement"
+      >
+        <span class="announcement-bell" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M10 21h4"></path>
+          </svg>
+        </span>
+        <span class="announcement-dot" aria-hidden="true"></span>
+      </button>
+
+      <a class="quote" href="/pages/contact.html">
+        Get a Quote <span>&#8594;</span>
+      </a>
+
     </nav>
   </div>
 </header>
@@ -286,9 +336,9 @@
   <div class="pns-photo-gallery-header">
     <div>
       <span class="pns-gallery-label">WORKFORCE GALLERY</span>
-      <h1>PEOPLE.<br><span>AT WORK.</span></h1>
+      <h1>WORKFORCE ENVIRONMENTS.</h1>
     </div>
-    <p>A visual collection of workforce deployment, project support and people working across demanding site environments.</p>
+    <p>A visual look at workforce environments, site activities and the people involved in project support.</p>
   </div>
 
   <div class="pns-subgallery-grid">
@@ -329,11 +379,16 @@
         </span>
       </button>
   </div>
+
+<div class="pns-gallery-disclaimer pns-workforce-disclaimer">
+  <div class="pns-gallery-disclaimer-label">WORKFORCE IMAGE DISCLAIMER</div>
+  <p>Workforce images are presented for workforce, site and industry-context purposes. Where images are not specifically identified as P&amp;S Infra workforce, they should not be interpreted as representing P&amp;S Infra employees or personnel. Worker photographs should only be published with appropriate permission or consent.</p>
+</div>
 </section>
 
 <div class="pns-subgallery-lightbox" id="pnsSubGalleryLightbox" aria-hidden="true">
-  <button class="pns-subgallery-close" type="button" aria-label="Close image viewer">×</button>
-  <button class="pns-subgallery-prev" type="button" aria-label="Previous image">←</button>
+  <button class="pns-subgallery-close" type="button" aria-label="Close image viewer">&#215;</button>
+  <button class="pns-subgallery-prev" type="button" aria-label="Previous image">&#8592;</button>
 
   <div class="pns-subgallery-view">
     <img id="pnsSubGalleryImage" src="" alt="">
@@ -343,7 +398,7 @@
     </div>
   </div>
 
-  <button class="pns-subgallery-next" type="button" aria-label="Next image">→</button>
+  <button class="pns-subgallery-next" type="button" aria-label="Next image">&#8594;</button>
 </div>
 </main>
 <footer class="footer footer-v2">
@@ -362,19 +417,19 @@
     <div class="footer-v2-column">
       <h4>Company</h4>
       <span class="footer-v2-line"></span>
-      <a href="/pages/about-us.html">About Us <b>→</b></a>
-      <a href="/pages/manpower-solutions.html">Manpower Supply <b>→</b></a>
-      <a href="#projects">Projects <b>→</b></a>
-      <a href="/pages/manpower-solutions.html">Contact <b>→</b></a>
+      <a href="/pages/about-us.html">About Us <b>&#8594;</b></a>
+      <a href="/pages/manpower-solutions.html">Manpower Supply <b>&#8594;</b></a>
+      <a href="#projects">Projects <b>&#8594;</b></a>
+      <a href="/pages/contact.html">Contact <b>&#8594;</b></a>
     </div>
 
     <div class="footer-v2-column">
       <h4>Services</h4>
       <span class="footer-v2-line"></span>
-      <a href="/pages/manpower-solutions.html">Skilled Manpower <b>→</b></a>
-      <a href="/pages/manpower-solutions.html">Unskilled Manpower <b>→</b></a>
-      <a href="/pages/civil-construction.html">Civil Construction <b>→</b></a>
-      <a href="/pages/manpower-solutions.html">Project Support <b>→</b></a>
+      <a href="/pages/manpower-solutions.html">Skilled Manpower <b>&#8594;</b></a>
+      <a href="/pages/manpower-solutions.html">Unskilled Manpower <b>&#8594;</b></a>
+      <a href="/pages/civil-construction.html">Civil Construction <b>&#8594;</b></a>
+      <a href="/pages/manpower-solutions.html">Project Support <b>&#8594;</b></a>
     </div>
 
     <div class="footer-v2-column footer-v2-contact">
@@ -451,8 +506,8 @@
   </div>
 
   <div class="wrap footer-v2-bottom">
-    <span>© 2026 P&amp;S Infra</span>
-    <span>Manpower Supply&nbsp;&nbsp;·&nbsp;&nbsp;Workforce Solutions&nbsp;&nbsp;·&nbsp;&nbsp;Civil Construction</span>
+    <span>&#169; 2026 P&amp;S Infra</span>
+    <span>Manpower Supply&nbsp;&nbsp;&#183;&nbsp;&nbsp;&#183;&nbsp;&nbsp;Workforce Solutions&nbsp;&nbsp;&#183;&nbsp;&nbsp;&#183;&nbsp;&nbsp;Civil Construction</span>
   </div>
 </footer>
 <script src="../script.js"></script>
