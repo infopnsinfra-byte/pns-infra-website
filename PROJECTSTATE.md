@@ -258,3 +258,37 @@ Analytics / SEO:
 5. No unsupported company claims.
 6. No placeholder contact information in production.
 7. No deployment until mobile and desktop QA is complete.
+---
+
+## CURRENT DEPLOYMENT STATUS — 28 SEPTEMBER 2026
+
+### GitHub
+- Repository: https://github.com/infopnsinfra-byte/pns-infra-website.git
+- Branch: main
+- Latest commit: 34b388c
+- Commit message: Finalize P&S Infra website content and cleanup
+- GitHub push: Completed successfully.
+
+### Vercel
+- Project: pns-infra-website
+- Environment: Production
+- Latest deployment commit: 34b388c
+- Deployment status: Ready
+- GitHub-to-Vercel deployment is connected to the main branch.
+
+### Website Cleanup
+- Final HTML/CSS/JS mojibake scan:
+- Footer arrow encoding normalized using HTML entities.
+- Contact page structure verified.
+- Unwanted GST contact card and old WhatsApp block removed from Contact page.
+- Contact audience section, enquiry/service notice and website information notice finalized.
+- Documentation files added to the repository.
+
+### Current Phase
+- Production deployment is live on Vercel.
+- Next step: complete live-site QA across desktop and mobile, including navigation, page links, images/assets, forms, contact links, gallery/video pages and responsive behaviour.
+
+### Important Content Status
+- P&S Infra website is manpower-supply focused, with civil construction presented as a secondary capability.
+- Project references remain subject to contractual status, permissions and authorization for public disclosure.
+- Pirpainti-related information is presented as a manpower/project opportunity context and not as a completed or executed P&S Infra project unless specifically identified.

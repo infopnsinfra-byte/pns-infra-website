@@ -7533,3 +7533,41 @@ header .announcement-new{
 .pns-careers-disclaimer{margin-top:28px;padding:17px 20px;background:#f7f7f4;border-left:3px solid #b99a5b;border-top:1px solid rgba(18,61,54,.08);border-bottom:1px solid rgba(18,61,54,.08)}.pns-careers-disclaimer-label{margin-bottom:6px;font-size:10px;line-height:1.3;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b99a5b}.pns-careers-disclaimer p{margin:0;color:#52605d;font-size:12px;line-height:1.6}@media(max-width:768px){.pns-careers-disclaimer{margin-top:22px;padding:15px}.pns-careers-disclaimer p{font-size:11.5px;line-height:1.55}}
 
 /* PNS CONTACT AUDIENCE FINAL */ .pns-contact-audience{margin:28px 0 30px;display:grid;gap:18px}.pns-contact-audience-block{padding:16px 18px;background:#f7f7f4;border-left:3px solid #b99a5b}.pns-contact-audience-block small{display:block;margin-bottom:7px;font-size:10px;font-weight:700;letter-spacing:1.4px;color:#b99a5b}.pns-contact-audience-block p{margin:0;font-size:13px;line-height:1.65;color:#52605d}.pns-form-privacy{margin:14px 0 18px;font-size:11px;color:#687571}.pns-form-privacy a{color:#123d36;text-decoration:underline}.pns-enquiry-disclaimer{margin-top:20px;padding:17px 20px;background:#f7f7f4;border-left:3px solid #b99a5b;border-top:1px solid rgba(18,61,54,.08);border-bottom:1px solid rgba(18,61,54,.08)}.pns-enquiry-disclaimer-label{margin-bottom:6px;font-size:10px;line-height:1.3;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#b99a5b}.pns-enquiry-disclaimer p{margin:0;color:#52605d;font-size:12px;line-height:1.6}.pns-footer-notice{margin:0 auto 22px;max-width:1200px;padding:14px 18px;border-left:3px solid #b99a5b;background:rgba(255,255,255,.035)}.pns-footer-notice span{display:block;margin-bottom:5px;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#b99a5b}.pns-footer-notice p{margin:0;font-size:11px;line-height:1.55;color:#aebfba}@media(max-width:768px){.pns-contact-audience{margin:22px 0}.pns-enquiry-disclaimer{padding:15px}.pns-footer-notice{margin-left:16px;margin-right:16px}}
+
+/* PNS_WHATSAPP_POPUP_CSS_V1 */
+.pns-wa-overlay {
+  position: fixed; inset: 0; z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; background: rgba(10,22,35,.68);
+}
+.pns-wa-dialog {
+  position: relative; box-sizing: border-box; width: 100%; max-width: 390px;
+  padding: 28px 22px 22px; border-radius: 16px;
+  background: #fff; color: #172b3a;
+  box-shadow: 0 20px 70px rgba(0,0,0,.28);
+  font-family: Inter, Arial, sans-serif;
+}
+.pns-wa-dialog h2 { margin: 0 38px 8px 0; font-size: 21px; line-height: 1.3; }
+.pns-wa-dialog p { margin: 0 0 18px; color: #5c6873; font-size: 14px; line-height: 1.5; }
+.pns-wa-close {
+  position: absolute; top: 10px; right: 10px; width: 36px; height: 36px;
+  border: 0; border-radius: 50%; background: #f0f3f5; color: #263746;
+  font-size: 24px; cursor: pointer;
+}
+.pns-wa-contact {
+  display: flex; align-items: center; gap: 12px; box-sizing: border-box;
+  width: 100%; margin-top: 10px; padding: 13px;
+  border: 1px solid #dce8df; border-radius: 10px;
+  color: #172b3a; text-decoration: none; background: #fff;
+}
+.pns-wa-contact:hover { background: #f0fbf3; border-color: #25a65a; }
+.pns-wa-contact-icon {
+  display: grid; place-items: center; flex: 0 0 40px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #25d366; color: #fff; font-size: 22px;
+}
+.pns-wa-contact-copy { display: flex; flex: 1; flex-direction: column; gap: 4px; }
+.pns-wa-contact-copy strong { font-size: 15px; }
+.pns-wa-contact-copy small { color: #5c6873; font-size: 13px; }
+@media (max-width: 420px) { .pns-wa-dialog { padding: 25px 16px 18px; } }
+/* END PNS_WHATSAPP_POPUP_CSS_V1 */

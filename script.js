@@ -357,3 +357,69 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){clearInterval(
   }
 
 })();
+
+
+// PNS_WHATSAPP_POPUP_JS_V1
+(() => {
+  'use strict';
+let overlay = null;
+  let previousFocus = null;
+
+  function closePopup() {
+    if (!overlay) return;
+    const oldOverlay = overlay;
+    overlay = null;
+    document.removeEventListener('keydown', onKeyDown);
+    oldOverlay.remove();
+    if (previousFocus) previousFocus.focus();
+    previousFocus = null;
+  }
+
+  function onKeyDown(event) {
+    if (event.key === 'Escape') closePopup();
+  }
+
+  function openPopup(trigger) {
+    if (overlay) return;
+    previousFocus = trigger;
+
+    overlay = document.createElement('div');
+    overlay.className = 'pns-wa-overlay';
+    overlay.innerHTML = `
+      <section class="pns-wa-dialog" role="dialog" aria-modal="true"
+        aria-labelledby="pns-wa-title">
+        <button type="button" class="pns-wa-close" aria-label="Close">&times;</button>
+        <h2 id="pns-wa-title">Chat with P&amp;S Infra</h2>
+        <p>Choose a contact to continue on WhatsApp.</p>
+        <a class="pns-wa-contact" href="https://wa.me/919815877931"
+          target="_blank" rel="noopener noreferrer">
+          <span class="pns-wa-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.16 1.6 5.98L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.47-8.43ZM12.1 21.77a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.86 9.86 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.65 0 5.13 1.03 7 2.9a9.84 9.84 0 0 1 2.9 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg></span>
+          <span class="pns-wa-contact-copy"><strong>1. Business &amp; Project Enquiries</strong>
+          <small>+91 98158 77931</small></span>
+        </a>
+        <a class="pns-wa-contact" href="https://wa.me/917870560445"
+          target="_blank" rel="noopener noreferrer">
+          <span class="pns-wa-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="currentColor"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.16 1.6 5.98L.12 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.47-8.43ZM12.1 21.77a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.86 9.86 0 0 1-1.52-5.25c0-5.46 4.45-9.9 9.91-9.9 2.65 0 5.13 1.03 7 2.9a9.84 9.84 0 0 1 2.9 7c0 5.46-4.45 9.9-9.91 9.9Zm5.43-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg></span>
+          <span class="pns-wa-contact-copy"><strong>2. Manpower &amp; Recruitment</strong>
+          <small>+91 78705 60445</small></span>
+        </a>
+      </section>`;
+
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', event => {
+      if (event.target === overlay || event.target.closest('.pns-wa-close')) {
+        closePopup();
+      }
+    });
+    document.addEventListener('keydown', onKeyDown);
+    overlay.querySelector('.pns-wa-close').focus();
+  }
+
+  document.addEventListener('click', event => {
+    const trigger = event.target.closest('.footer-v2-social-link.whatsapp');
+    if (!trigger) return;
+    event.preventDefault();
+    openPopup(trigger);
+  });
+})();
+// END PNS_WHATSAPP_POPUP_JS_V1
