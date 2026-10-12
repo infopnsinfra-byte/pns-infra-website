@@ -1878,21 +1878,13 @@
 
  /* FINAL CAROUSEL ARROW DIRECTION FIX */
 .hero .arrow {
-  font-size: 0 !important;
+  font-size: 24px !important;
 }
 
-.hero .arrow.prev::before {
-  content: "←" !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
-}
-
+.hero .arrow.prev::before,
 .hero .arrow.next::before {
-  content: "→" !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
+  content: none !important;
 }
-
 /* =========================================================
    ANNOUNCEMENT + GALLERY NAVIGATION
    ========================================================= */
@@ -2187,7 +2179,7 @@
   }
 }
 /* =================================================
-   P&S INFRA — MOBILE HERO FINAL FIX
+   P&S INFRA â€” MOBILE HERO FINAL FIX
    Desktop remains unchanged
    ================================================= */
 
@@ -2377,7 +2369,7 @@
     font-size:8.5px;
   }
 }
-/* MOBILE HERO — FINAL SPACING ADJUSTMENT */
+/* MOBILE HERO â€” FINAL SPACING ADJUSTMENT */
 @media (max-width:600px){
 
   .hero-copy-layer{
@@ -2431,7 +2423,7 @@
     bottom:164px;
   }
 }
-/* MOBILE CAROUSEL ARROWS — KEEP CLEAR OF CONTENT */
+/* MOBILE CAROUSEL ARROWS â€” KEEP CLEAR OF CONTENT */
 @media (max-width:600px){
   .arrow{
     top:19%;
@@ -2454,7 +2446,7 @@
   }
 }
 /* =========================================================
-   ANNOUNCEMENT BELL — HEADER
+   ANNOUNCEMENT BELL â€” HEADER
    ========================================================= */
 
 .announcement-trigger{
@@ -2832,7 +2824,7 @@ header .announcement-new{
     justify-content:center;
   }
 }
-/* CAREERS CTA — HIGHLIGHTED */
+/* CAREERS CTA â€” HIGHLIGHTED */
 .careers-v2-button{
   background:#c6a15b !important;
   color:#ffffff !important;
@@ -2854,7 +2846,7 @@ header .announcement-new{
   color:#ffffff !important;
 }
 /* =========================================================
-   GALLERY NAVIGATION — FINAL POLISH
+   GALLERY NAVIGATION â€” FINAL POLISH
    ========================================================= */
 
 .nav-gallery{
@@ -3418,7 +3410,7 @@ header .announcement-new{
   }
 }
 /* =========================================================
-   GALLERY V3 — SINGLE GALLERY SECTION
+   GALLERY V3 â€” SINGLE GALLERY SECTION
    ========================================================= */
 
 .gallery-v3{
@@ -3713,10 +3705,10 @@ header .announcement-new{
     font-size:20px;
   }
 }
-/* GALLERY DROPDOWN — CLICK FIX ONLY */
+/* GALLERY DROPDOWN â€” CLICK FIX ONLY */
 
 /* =========================================================
-   PROJECT GALLERY — FILTER & IMAGE VIEW
+   PROJECT GALLERY â€” FILTER & IMAGE VIEW
    ========================================================= */
 
 .gallery-project-filters{
@@ -3840,7 +3832,7 @@ header .announcement-new{
   }
 }
 /* =========================================================
-   PROJECT GALLERY — BALANCED LAYOUT
+   PROJECT GALLERY â€” BALANCED LAYOUT
    ========================================================= */
 
 .gallery-v3-category[id="gallery-projects"]{
@@ -3926,7 +3918,7 @@ header .announcement-new{
   }
 }
 /* =========================================================
-   PROJECT GALLERY — CLEAN UI OVERRIDE
+   PROJECT GALLERY â€” CLEAN UI OVERRIDE
    ========================================================= */
 
 .gallery-v3-category[id="gallery-projects"] .gallery-v3-category-head{
@@ -4020,7 +4012,7 @@ header .announcement-new{
   }
 }
 /* =========================================================
-   PROJECT GALLERY — REFERENCE STYLE SHOWCASE
+   PROJECT GALLERY â€” REFERENCE STYLE SHOWCASE
    ========================================================= */
 
 .gallery-v3-category[id="gallery-projects"] .gallery-v3-project-grid{
@@ -4156,7 +4148,7 @@ header .announcement-new{
   }
 }
 /* =========================================================
-   P&S INFRA — CINEMATIC GALLERY PAGE
+   P&S INFRA â€” CINEMATIC GALLERY PAGE
    ========================================================= */
 
 .pns-cinematic-gallery{
@@ -4400,7 +4392,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   P&S INFRA — MULTI PHOTO CINEMATIC GALLERY
+   P&S INFRA â€” MULTI PHOTO CINEMATIC GALLERY
    ========================================================= */
 
 .pns-photo-gallery{
@@ -4709,7 +4701,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   GALLERY — NATURAL IMAGE RATIO FINAL ADJUSTMENT
+   GALLERY â€” NATURAL IMAGE RATIO FINAL ADJUSTMENT
    ========================================================= */
 
 .pns-photo-grid{
@@ -4763,7 +4755,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   GALLERY — SQUARE PHOTO TILES
+   GALLERY â€” SQUARE PHOTO TILES
    ========================================================= */
 
 .pns-photo-gallery-header{
@@ -4861,7 +4853,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   GALLERY — 5 SQUARE PHOTOS PER ROW
+   GALLERY â€” 5 SQUARE PHOTOS PER ROW
    ========================================================= */
 
 @media (min-width:769px){
@@ -4900,7 +4892,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   GALLERY — FINAL HEADER & CAPTION POLISH
+   GALLERY â€” FINAL HEADER & CAPTION POLISH
    ========================================================= */
 
 .pns-photo-gallery{
@@ -5003,7 +4995,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   P&S INFRA — MANPOWER SOLUTIONS PAGE
+   P&S INFRA â€” MANPOWER SOLUTIONS PAGE
    ========================================================= */
 
 .pns-page-hero{
@@ -5189,8 +5181,8 @@ header .announcement-new{
 
 .pns-approach-points > div{
   display:grid;
-  grid-template-columns:55px 1fr;
-  column-gap:20px;
+  grid-template-columns:1fr;
+  column-gap:0;
   padding:0 0 27px;
   margin-bottom:27px;
   border-bottom:1px solid rgba(255,255,255,.14);
@@ -5349,7 +5341,7 @@ header .announcement-new{
 
 
 /* =========================================================
-   CONTACT PAGE — DEDICATED DESIGN
+   CONTACT PAGE â€” DEDICATED DESIGN
    ========================================================= */
 
 .pns-contact-page{
@@ -5885,7 +5877,7 @@ header .announcement-new{
 }
 
 /* =========================================================
-   P&S INFRA — FINAL HEADER UI
+   P&S INFRA â€” FINAL HEADER UI
    ========================================================= */
 
 @media (min-width:769px){
@@ -6077,7 +6069,7 @@ header .announcement-new{
 }
 
 /* =========================================================
-   ANNOUNCEMENT MODAL — FINAL UI
+   ANNOUNCEMENT MODAL â€” FINAL UI
    ========================================================= */
 
 .announcement-card{
@@ -6229,7 +6221,7 @@ header .announcement-new{
 
 }
 /* =========================================================
-   P&S INFRA — FINAL PROFESSIONAL NAVIGATION
+   P&S INFRA â€” FINAL PROFESSIONAL NAVIGATION
    ========================================================= */
 
 @media (min-width:769px){
@@ -6239,7 +6231,7 @@ header .announcement-new{
     align-items:center !important;
   }
 
-  /* ALL MAIN NAV ITEMS — EXACT SAME TYPOGRAPHY */
+  /* ALL MAIN NAV ITEMS â€” EXACT SAME TYPOGRAPHY */
   .header .navlinks > a,
   .header .nav-gallery-toggle{
     font-family:Inter,Arial,sans-serif !important;
@@ -6260,7 +6252,7 @@ header .announcement-new{
     text-decoration:none !important;
   }
 
-  /* GALLERY — SAME SIZE AS EVERY OTHER NAV ITEM */
+  /* GALLERY â€” SAME SIZE AS EVERY OTHER NAV ITEM */
   .header .nav-gallery{
     height:88px !important;
     display:flex !important;
@@ -6335,7 +6327,7 @@ header .announcement-new{
   }
 }
 
-/* MOBILE — KEEP NAV TYPOGRAPHY CONSISTENT */
+/* MOBILE â€” KEEP NAV TYPOGRAPHY CONSISTENT */
 @media (max-width:768px){
   .header .navlinks > a,
   .header .nav-gallery-toggle{
@@ -6346,13 +6338,13 @@ header .announcement-new{
 }
 
 /* =========================================================
-   P&S INFRA — NAVIGATION BUG FIX
+   P&S INFRA â€” NAVIGATION BUG FIX
    Gallery text + Quote button
    ========================================================= */
 
 @media (min-width:769px){
 
-  /* FIX 1 — ONLY CHEVRON ROTATES, NOT "GALLERY" TEXT */
+  /* FIX 1 â€” ONLY CHEVRON ROTATES, NOT "GALLERY" TEXT */
   .header .nav-gallery-toggle > span:first-child{
     transform:none !important;
     display:inline-block !important;
@@ -6372,7 +6364,7 @@ header .announcement-new{
     transform:none !important;
   }
 
-  /* FIX 2 — QUOTE BUTTON MUST NOT TAKE FULL 88px NAV HEIGHT */
+  /* FIX 2 â€” QUOTE BUTTON MUST NOT TAKE FULL 88px NAV HEIGHT */
   .header .navlinks > a.quote{
     height:50px !important;
     min-height:50px !important;
@@ -6407,13 +6399,13 @@ header .announcement-new{
   }
 }
 
-/* Extra protection — Gallery text can NEVER rotate */
+/* Extra protection â€” Gallery text can NEVER rotate */
 .nav-gallery-toggle > span:first-child{
   transform:none !important;
 }
 
 /* =========================================================
-   P&S INFRA — FINAL NAV POLISH
+   P&S INFRA â€” FINAL NAV POLISH
    ========================================================= */
 
 @media (min-width:769px){
@@ -6425,7 +6417,7 @@ header .announcement-new{
     content:none !important;
   }
 
-  /* ACTIVE PAGE — CLEAN TEXT INDICATOR */
+  /* ACTIVE PAGE â€” CLEAN TEXT INDICATOR */
   .header .navlinks > a.active{
     color:var(--forest2) !important;
     font-weight:700 !important;
@@ -6436,7 +6428,7 @@ header .announcement-new{
     font-weight:700 !important;
   }
 
-  /* HOVER — NO UNDERLINE */
+  /* HOVER â€” NO UNDERLINE */
   .header .navlinks > a:hover{
     color:var(--forest2) !important;
   }
@@ -6445,7 +6437,7 @@ header .announcement-new{
     color:var(--forest2) !important;
   }
 
-  /* GET A QUOTE — FORCE WHITE TEXT */
+  /* GET A QUOTE â€” FORCE WHITE TEXT */
   .header .navlinks > a.quote,
   .header .navlinks > a.quote:link,
   .header .navlinks > a.quote:visited,
@@ -6471,7 +6463,7 @@ header .announcement-new{
 }
 
 /* =========================================================
-   P&S INFRA — PREMIUM NAV ACTIVE / HOVER EFFECT
+   P&S INFRA â€” PREMIUM NAV ACTIVE / HOVER EFFECT
    No underline / no pill
    ========================================================= */
 
@@ -6493,14 +6485,14 @@ header .announcement-new{
       opacity .22s ease !important;
   }
 
-  /* HOVER — subtle lift */
+  /* HOVER â€” subtle lift */
   .header .navlinks > a:not(.quote):hover,
   .header .nav-gallery:hover .nav-gallery-toggle{
     color:#9b7638 !important;
     transform:translateY(-1px) !important;
   }
 
-  /* ACTIVE PAGE — stronger text */
+  /* ACTIVE PAGE â€” stronger text */
   .header .navlinks > a.active{
     color:var(--forest2) !important;
     font-weight:700 !important;
@@ -6556,8 +6548,8 @@ header .announcement-new{
 }
 
 /* =========================================================
-   P&S INFRA — GLOBAL HEADER NORMALIZATION
-   FINAL — SAME HEADER ON EVERY PAGE
+   P&S INFRA â€” GLOBAL HEADER NORMALIZATION
+   FINAL â€” SAME HEADER ON EVERY PAGE
    ========================================================= */
 
 @media (min-width:769px){
@@ -6586,7 +6578,7 @@ header .announcement-new{
     box-sizing:border-box !important;
   }
 
-  /* LOGO — SAME SIZE + POSITION */
+  /* LOGO â€” SAME SIZE + POSITION */
   .header .brand{
     flex:0 0 auto !important;
     width:auto !important;
@@ -6608,7 +6600,7 @@ header .announcement-new{
     padding:0 !important;
   }
 
-  /* NAVIGATION — SAME POSITION */
+  /* NAVIGATION â€” SAME POSITION */
   .header .navlinks{
     flex:0 0 auto !important;
     width:auto !important;
@@ -6745,7 +6737,7 @@ header .announcement-new{
     transform:rotate(180deg) !important;
   }
 
-  /* GALLERY DROPDOWN — FORCE REAL FLOATING MENU */
+  /* GALLERY DROPDOWN â€” FORCE REAL FLOATING MENU */
   .header .nav-gallery-menu{
     position:absolute !important;
     top:calc(100% + 8px) !important;
@@ -7571,3 +7563,78 @@ header .announcement-new{
 .pns-wa-contact-copy small { color: #5c6873; font-size: 13px; }
 @media (max-width: 420px) { .pns-wa-dialog { padding: 25px 16px 18px; } }
 /* END PNS_WHATSAPP_POPUP_CSS_V1 */
+
+/* Industry list bullet alignment */
+.pns-home-industry-grid strong.industry-bullet{font-size:20px;line-height:1;color:var(--gold);font-weight:700;}
+
+
+/* P&S Infra capability cards enhancement */
+.pns-home-capabilities-grid article{position:relative;border:1px solid #dce5e1;border-top:3px solid var(--gold);background:linear-gradient(145deg,#fff 0%,#f7faf8 100%);box-shadow:0 5px 18px rgba(18,61,54,.06);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.pns-home-capabilities-grid article:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(18,61,54,.13);border-top-color:#123d36;}
+.pns-home-capabilities-grid article h3{color:#123d36;}
+@media(prefers-reduced-motion:reduce){.pns-home-capabilities-grid article{transition:none}.pns-home-capabilities-grid article:hover{transform:none}}
+
+
+/* Capability cards - visual enhancement */
+.pns-home-cards article{position:relative;overflow:hidden;border:1px solid #dce5e1;border-top:3px solid #c99b45;background:linear-gradient(145deg,#ffffff 0%,#f5f8f6 100%);box-shadow:0 8px 22px rgba(18,61,54,.07);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.pns-home-cards article:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(18,61,54,.14);border-top-color:#123d36;}
+.pns-home-cards article h3{color:#123d36;}
+.pns-home-cards article p{color:#5d6965;}
+@media(prefers-reduced-motion:reduce){.pns-home-cards article{transition:none}.pns-home-cards article:hover{transform:none}}
+
+
+/* Industries section visual enhancement */
+.pns-home-industry-grid div{position:relative;min-height:82px;padding:22px 24px 22px 28px;border-left:3px solid #c99b45;background:linear-gradient(135deg,#fff 0%,#f5f8f6 100%);transition:background .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;}
+.pns-home-industry-grid div:hover{background:#edf4f0;border-left-color:#123d36;transform:translateY(-3px);box-shadow:0 8px 18px rgba(18,61,54,.08);}
+.pns-home-industry-grid span{color:#123d36;font-weight:650;}
+@media(max-width:768px){.pns-home-industry-grid div{min-height:68px;padding:18px 18px 18px 22px;}}
+
+
+/* Refined industry grid finish */
+.pns-home-industry-grid div{border-left:1px solid rgba(18,61,54,.12);border-right:1px solid rgba(18,61,54,.12);border-bottom:1px solid rgba(18,61,54,.12);border-top:1px solid transparent;}
+.pns-home-industry-grid div:hover{border-left:3px solid #c99b45;padding-left:26px;}
+.pns-home-industry-grid div:first-child{border-top:1px solid rgba(18,61,54,.12);}
+
+
+/* Our Approach premium card details */
+.pns-home-process article{position:relative;border-left:3px solid #123d36;box-shadow:0 8px 24px rgba(18,61,54,.06);transition:transform .25s ease,box-shadow .25s ease;}
+.pns-home-process article h3{position:relative;padding-bottom:10px;}
+.pns-home-process article h3::after{content:'';position:absolute;left:0;bottom:0;width:38px;height:2px;background:#c99b45;}
+.pns-home-process article:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(18,61,54,.12);}
+
+
+/* Final industry grid refinement */
+.pns-home-industry-grid div{border-left:1px solid rgba(18,61,54,.12)!important;border-right:1px solid rgba(18,61,54,.12)!important;border-top:1px solid rgba(18,61,54,.12)!important;border-bottom:1px solid rgba(18,61,54,.12)!important;padding-left:24px;}
+.pns-home-industry-grid div:hover{border-left:3px solid #c99b45!important;padding-left:22px;background:#edf4f0;transform:translateY(-2px);}
+
+
+
+
+
+/* Hide approach numbering without changing grid layout */
+.pns-home-process-grid strong{visibility:hidden!important;}
+
+
+/* Hide only the three approach step numbers */
+.pns-home-process-grid > div > strong{display:none!important;}
+
+/* Remove numbering from manpower approach steps */
+.pns-home-process-grid strong{display:none!important;}
+
+/* Hide only manpower approach numbering */
+.pns-approach-points > div > strong{visibility:hidden!important;}
+
+
+/* Hide numbering in manpower service cards only */
+.pns-service-card > span:first-child{visibility:hidden!important;}
+
+
+/* Hide numbering in civil construction capability list only */
+.pns-civil-capabilities span:first-child{visibility:hidden!important;}
+
+/* Hide only civil construction service numbers */
+
+
+
+/* Hide civil service numbering only */
+.construction .service-list span:before{content:none!important;display:none!important;}
